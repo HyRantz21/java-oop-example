@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Member {
+abstract class Member {
   private String id;
   private String name;
   public ArrayList<Book> borrowedBooks = new ArrayList<Book>();
@@ -36,4 +36,7 @@ class Member {
   public void giveBook(Book book) {
     this.borrowedBooks.remove(book);
   }
+  
+  abstract Memeber print()
+
 }
