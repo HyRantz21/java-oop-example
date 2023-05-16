@@ -1,7 +1,8 @@
-class Book {
-  // Enkapsulasi
+abstract class Book {
   private String id;
   private String title;
+
+  abstract void addBook(String id, String title);
 
   public String getId() {
     return id;
@@ -18,24 +19,11 @@ class Book {
   public void setTitle(String title) {
     this.title = title;
   }
-
-  // Polimorfisme
+}
+class BookAdd extends Book{
   @Override
-  public String toString() {
-    return "Book [id=" + id + ", title=" + title + "]";
-  }
-
-  public void printInfo() {
-    System.out.println("Book Info:");
-    System.out.println("ID: " + id);
-    System.out.println("Title: " + title);
-  }
-
-  public void printInfo(boolean includeId) {
-    System.out.println("Book Info:");
-    if (includeId) {
-      System.out.println("ID: " + id);
-    }
-    System.out.println("Title: " + title);
+  void addBook(String id, String title){
+    this.setId(id);
+    this.setTitle(title);
   }
 }

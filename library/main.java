@@ -4,7 +4,7 @@ class Main {
 
   static Scanner scan = new Scanner(System.in);
   static Library library = new Library();
-  static Book book = new Book();
+  static Book book = new BookAdd();
 
   public static void showMenu() {
     System.out.println("================================");
@@ -18,29 +18,23 @@ class Main {
   }
 
   public static void initLibraryData() {
-    Book book1 = new Book();
-    book1.setId("1");
-    book1.setTitle("pemrograman java");
+    Book book1 = new BookAdd();
+    book1.addBook("1","pemrograman java");
 
-    Book book2 = new Book();
-    book2.setId("2");
-    book2.setTitle("pemrograman oop");
+    Book book2 = new BookAdd();
+    book2.addBook("2","pemrograman oop");
 
-    Book book3 = new Book();
-    book3.setId("3");
-    book3.setTitle("pemrograman android");
+    Book book3 = new BookAdd();
+    book3.addBook("3","pemrograman android");
 
-    Member member1 = new Member();
-    member1.setId("1") ;
-    member1.setName("aka");
+    Member member1 = new MemberAdd();
+    member1.addMember("1","aka");
 
-    Member member2 = new Member();
-    member2.setId("2");
-    member2.setName("budi");
+    Member member2 = new MemberAdd();
+    member2.addMember("2","budi");
 
-    Member member3 = new Member();
-    member3.setId("3");
-    member3.setName("tono");
+    Member member3 = new MemberAdd();
+    member3.addMember("3","tono");
 
     library.books.add(book1);
     library.books.add(book2);
@@ -70,7 +64,7 @@ class Main {
   }
 
   public static void addMember() {
-    Member member = new Member();
+    Member member = new MemberAdd();
 
     System.out.print("id : ");
     String id = scan.next();
@@ -91,7 +85,7 @@ class Main {
   }
 
   public static void addbook(){
-    Book book = new Book();
+    Book book = new BookAdd();
 
     System.out.print("id book :");
     String id = scan.next();
@@ -129,10 +123,6 @@ class Main {
     String bookId = scan.next();
 
     library.receiveBook(memberId, bookId);
-  }
-
-  public static void Bookinfo() {
-    book.printInfo();
   }
 
   public static void main(String[] args) {

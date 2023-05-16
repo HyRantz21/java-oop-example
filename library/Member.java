@@ -4,6 +4,8 @@ abstract class Member {
   private String id;
   private String name;
   public ArrayList<Book> borrowedBooks = new ArrayList<Book>();
+  
+  abstract void addMember(String id, String name);
 
   public String getId() {
     return id;
@@ -36,7 +38,11 @@ abstract class Member {
   public void giveBook(Book book) {
     this.borrowedBooks.remove(book);
   }
-  
-  abstract Memeber print()
-
 }
+class MemberAdd extends Member{
+  @Override
+  void addMember(String id, String name){
+    this.setId(id);
+    this.setName(name);
+  }
+} 
