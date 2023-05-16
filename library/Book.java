@@ -1,3 +1,4 @@
+// enkapsulasi, abstraksi, polymorp, inhirent
 abstract class Book {
   private String id;
   private String title;

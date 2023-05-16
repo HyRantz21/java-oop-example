@@ -1,3 +1,4 @@
+// enkapsulasi, abstraksi, polymorp, inhirent
 import java.util.ArrayList;
 
 abstract class Member {
